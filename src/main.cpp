@@ -6,10 +6,12 @@
 #include "ram.h"
 #include "gpu.h"
 #include "disk.h"
+#include <Windows.h>
 //df
 
 int main()
 {
+    SetConsoleOutputCP(CP_UTF8);
     int N=8;
     std::vector<double> vector_int;    
     vector_int.reserve(N);
