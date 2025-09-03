@@ -1,7 +1,13 @@
+
 cmake_minimum_required(VERSION 3.29.5)
+project("test_cmake" VERSION 1.0)
 
 
-add_executable(test_cmake main.cpp   "src/kbd.cpp" "src/gpu.cpp" "src/disk.cpp" "src/ram.cpp" "src/cpu.cpp")
+set(CMAKE_CXX_STANDARD 14 )
 
-target_include_directories(test_cmake PUBLIC ${MY_INCLUDE_DIR})
+file(GLOB
+            CPP_SOURCES "*src/*.cpp")
 
+include_directories("${PROJECT_SOURCE_DIR}/include")
+
+add_executable(${PROJECT_NAME} ${CPP_SOURCES})
